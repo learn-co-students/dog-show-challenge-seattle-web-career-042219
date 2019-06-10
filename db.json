@@ -1,28 +1,40 @@
 {
   "dogs": [
     {
-      "id": 1,
-      "name": "Baby",
+      "name": "BabyBoyGGGGG",
       "breed": "Scottish Deerhound",
-      "sex": "male"
+      "sex": "male",
+      "id": 1
     },
     {
+      "name": "TeddyRuxPinner",
+      "breed": "Rhodesian Ridgeback",
+      "sex": "female",
       "id": 2
     },
     {
+      "name": "Snickers-girlboy",
+      "breed": "Dachshund",
+      "sex": "female",
       "id": 3
     },
     {
+      "name": "HarveyMudd",
+      "breed": "Irish Spaniel",
+      "sex": "male",
       "id": 4
     },
     {
-      "id": 5
+      "id": 5,
+      "name": "Gracie",
+      "breed": "Miniature Pinscher",
+      "sex": "female"
     },
     {
-      "name": "OreoYO",
+      "id": 6,
+      "name": "Oreo",
       "breed": "English Springer",
-      "sex": "male",
-      "id": 6
+      "sex": "male"
     },
     {
       "id": 7,

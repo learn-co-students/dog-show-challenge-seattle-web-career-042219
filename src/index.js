@@ -72,10 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
       let formName = document.getElementById('edit-name')
       let formBreed = document.getElementById('edit-breed')
       let formSex = document.getElementById('edit-sex')
+      
 
-      formName.value = dog.name
-      formBreed.value = dog.breed
-      formSex.value = dog.sex
+      formName.value = td1.textContent
+      formBreed.value = td2.textContent
+      formSex.value = td3.textContent
+
       let form = document.getElementById('dog-form')
       form.setAttribute('dog-id', dog.id)
 
