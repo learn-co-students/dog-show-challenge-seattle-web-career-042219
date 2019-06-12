@@ -12,6 +12,8 @@ function getDogs() {
 }
 
 function renderDogs(dogs) {
+  let tBody = document.getElementById("table-body");
+  tBody.innerHTML = "";
   dogs.forEach(dog => renderDog(dog));
 }
 
@@ -41,23 +43,33 @@ function renderDog(dog) {
 }
 
 function submitEdit(dog) {
-  console.log("dog=", dog);
   let submitForm = document.getElementById("dog-form");
-  submitForm[3].addEventListener("submit", patchDog(dog));
   submitForm.name.value = dog.name;
   submitForm.breed.value = dog.breed;
   submitForm.sex.value = dog.sex;
+  submitForm.addEventListener("submit", e => {
+    e.preventDefault();
+    patchDog(dog, e);
+  });
 }
 
-function patchDog(dog) {
+function patchDog(dog, e) {
+  let dogName = e.target[0].value;
+  let dogBreed = e.target[1].value;
+  let dogSex = e.target[2].value;
+  e.target[0].value = "";
+  e.target[1].value = "";
+  e.target[2].value = "";
   fetch(dogsUrl + "/" + dog.id, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json"
     },
-    body: JSON.stringify({ name: dog.name, breed: dog.breed, sex: dog.sex })
+    body: JSON.stringify({ name: dogName, breed: dogBreed, sex: dogSex })
   })
     .then(result => result.json())
+    .then(json => console.log("json=", json))
+    .then(getDogs)
     .catch(err => console.log(err));
 }
